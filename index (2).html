@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #f0f0f0; /* Light text */
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .faq-container {
+            width: 100%;
+            max-width: 800px;
+            background-color: #000; /* Pure black for the container */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border: 1px solid #333; /* Subtle border */
+        }
+        .faq-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #e0e0e0;
+            text-align: center;
+            margin-bottom: 40px;
+            letter-spacing: -0.025em;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #222; /* Darker line for separation */
+            padding-bottom: 15px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .faq-question summary {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 1.25rem; /* Increased font size for questions */
+            font-weight: 500;
+            color: #f8f8f8; /* Slightly brighter for questions */
+            background-color: #111; /* Slightly lighter black for question background */
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+ */
+            user-select: none; /* Standard syntax */
+        }
+        .faq-question summary:hover {
+            background-color: #222; /* Darker hover effect */
+            color: #fff;
+        }
+        .faq-question summary::-webkit-details-marker {
+            display: none; /* Hide default arrow in Webkit browsers */
+        }
+        .faq-question summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #888; /* Gray for the icon */
+            transition: transform 0.3s ease;
+            margin-left: 15px;
+        }
+        .faq-question[open] summary::after {
+            content: '-';
+            transform: rotate(0deg); /* No rotation needed for plus/minus */
+            color: #fff; /* White for open icon */
+        }
+        .faq-answer {
+            padding: 20px;
+            padding-top: 10px; /* Adjust top padding */
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #b0b0b0; /* Lighter gray for answers */
+            background-color: #0d0d0d; /* Slightly different background for answer */
+            border-radius: 0 0 8px 8px;
+            margin-top: -8px; /* Overlap with summary border-radius */
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.4s ease-out, max-height 0.4s ease-out;
+        }
+        .faq-question[open] .faq-answer {
+            opacity: 1;
+            max-height: 500px; /* Sufficient height for content, adjust if answers are very long */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .faq-title {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .faq-question summary {
+                font-size: 1.1rem;
+                padding: 12px 15px;
+            }
+            .faq-answer {
+                font-size: 1rem;
+                padding: 15px;
+                padding-top: 8px;
+            }
+            .faq-question summary::after {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .faq-container {
+                padding: 20px;
+                border-radius: 8px;
+            }
+            .faq-title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            .faq-question summary {
+                font-size: 1rem;
+                padding: 10px 12px;
+            }
+            .faq-answer {
+                font-size: 0.95rem;
+                padding: 12px;
+                padding-top: 6px;
+            }
+            .faq-question summary::after {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="faq-container">
+        <h1 class="faq-title">Frequently Asked Questions</h1>
+
+        <div class="faq-list">
+            <!-- Question 1 -->
+            <details class="faq-item faq-question">
+                <summary>1. Full Name:</summary>
+                <div class="faq-answer">
+                    Siva Ragavendra Kandula
+                </div>
+            </details>
+
+            <!-- Question 2 -->
+            <details class="faq-item faq-question">
+                <summary>2. Student ID:</summary>
+                <div class="faq-answer">
+                    2936565
+                </div>
+            </details>
+
+            <!-- Question 3 -->
+            <details class="faq-item faq-question">
+                <summary>3. Skype ID:</summary>
+                <div class="faq-answer">
+                    live:raghavendra-skype-id (Please update if different)
+                </div>
+            </details>
+
+            <!-- Question 4 -->
+            <details class="faq-item faq-question">
+                <summary>4. Do you have any previous UK visa or other visa refusals?</summary>
+                <div class="faq-answer">
+                    No, I do not have any previous visa refusals. This is my first application to the United Kingdom.
+                </div>
+            </details>
+
+            <!-- Question 5 -->
+            <details class="faq-item faq-question">
+                <summary>5. Where will you live in the UK?</summary>
+                <div class="faq-answer">
+                    After securing my visa, I plan to live in university-managed accommodation provided by De Montfort University. Options such as Bede Hall, New Wharf Hall, and privately owned halls like Liberty Park and The Glassworks are within a 10–20-minute walk from campus, offering safety, convenience, and an ideal environment to focus on my studies.
+                    Living in university housing will help me build connections with students from diverse backgrounds and engage in social and academic activities. DMU accommodation also ensures access to 24/7 security, on-site support staff, internet access, and study spaces, which are essential for my academic success and personal well-being during my time in the UK.
+                </div>
+            </details>
+
+            <!-- Question 6 -->
+            <details class="faq-item faq-question">
+                <summary>6. What was the last course you completed and when? Why this course now?</summary>
+                <div class="faq-answer">
+                    I completed my Bachelor of Technology in Information Technology from PRIST University in 2024 with a CGPA of 7.29/10. During my undergraduate journey, I developed a keen interest in cybersecurity, especially while working on AI-based projects where I realized the importance of securing digital systems.
+                    With the world becoming increasingly digital, the risk of cyber threats is also growing rapidly. Pursuing an MSc in Cyber Security now is essential to build technical expertise, stay ahead of evolving threats, and enter a domain that is globally in demand. This program will give me a solid foundation to become a capable security professional and meet the industry's expectations.
+                </div>
+            </details>
+
+            <!-- Question 7 -->
+            <details class="faq-item faq-question">
+                <summary>7. What have you been doing after your graduation?</summary>
+                <div class="faq-answer">
+                    Since graduating in 2024, I’ve been focusing on preparing for my postgraduate studies abroad. I also enrolled in and completed several certification courses to remain academically active. These included:
+                    <ul>
+                        <li>Cyber Security Fundamentals – covering topics like firewalls, intrusion detection, and encryption</li>
+                        <li>Power BI – learning how to build data dashboards and visualizations</li>
+                        <li>Data Analytics with Python & R – strengthening my skills in data analysis and scripting</li>
+                    </ul>
+                    These certifications helped me stay updated and gave me the confidence to pursue advanced studies in cybersecurity.
+                </div>
+            </details>
+
+            <!-- Question 8 -->
+            <details class="faq-item faq-question">
+                <summary>8. Introduce yourself (Include goals)</summary>
+                <div class="faq-answer">
+                    My name is Siva Ragavendra Kandula, born on 11th November 2002, and I come from Chilakaluripet, Andhra Pradesh, India. I completed my B.Tech in Information Technology from PRIST University in 2024. I belong to a family of four, including my supportive parents and a younger sibling.
+                    From a young age, I have been deeply passionate about computers, networks, and system security. During my academic years, I developed interest in cybersecurity, AI applications, and secure software systems, which led me to choose Cyber Security as my specialization.
+                    My short-term goal is to complete my MSc in Cyber Security from De Montfort University and build professional skills through internships and part-time work. My long-term goal is to establish my own cybersecurity firm in India that offers security audits, threat analysis, and consultancy services to small- and medium-sized enterprises.
+                </div>
+            </details>
+
+            <!-- Question 9 -->
+            <details class="faq-item faq-question">
+                <summary>9. Why the UK and not other countries?</summary>
+                <div class="faq-answer">
+                    The UK offers a highly reputable education system that combines academic excellence with practical exposure. One of the key advantages of the UK is its one-year master’s program, which is cost-effective and time-saving compared to countries like the USA or Australia. UK degrees are globally recognized, and the curriculum is regularly updated to match industry standards.
+                    Additionally, the UK is known for its multicultural environment, safety, and excellent student support services. Compared to the US (with higher tuition fees and longer course durations), or Australia (with more expensive living costs), the UK provides the best balance of quality, affordability, and global opportunity.
+                </div>
+            </details>
+
+            <!-- Question 10 -->
+            <details class="faq-item faq-question">
+                <summary>10. Why De Montfort University (DMU) and not other universities?</summary>
+                <div class="faq-answer">
+                    I chose DMU for its strong reputation, modern curriculum, and practical teaching approach in cybersecurity.
+                    <ul>
+                        <li>Rankings: DMU is ranked 711-720 in QS World University Rankings 2025, and between 601-800 by Times Higher Education.</li>
+                        <li>Teaching Excellence: It has received a Gold rating in the Teaching Excellence Framework (TEF).</li>
+                        <li>Employability: 97.3% of graduates are employed or in further studies within 6 months of graduation.</li>
+                        <li>Facilities: DMU offers modern labs, the Kimberlin Library (open 24/7 during exams), high-performance computing labs, and cybersecurity research centers. The university supports students with personal tutors, academic guidance, mental health services, and employability programs like DMUworks.</li>
+                    </ul>
+                    I considered the University of Bedfordshire and the University of West London, but their rankings and curriculum structure didn’t match the depth and practical focus offered at DMU. Its block teaching method, where students study one module at a time, matches my learning style and helps in better concentration.
+                </div>
+            </details>
+
+            <!-- Question 11 -->
+            <details class="faq-item faq-question">
+                <summary>11. What course have you applied for?</summary>
+                <div class="faq-answer">
+                    I have applied for the MSc Cyber Security program at De Montfort University.
+                </div>
+            </details>
+
+            <!-- Question 12 -->
+            <details class="faq-item faq-question">
+                <summary>12. How will this course benefit you?</summary>
+                <div class="faq-answer">
+                    The MSc Cyber Security program is designed to develop critical knowledge and skills in areas such as:
+                    <ul>
+                        <li>Cyber Threat Intelligence</li>
+                        <li>Network Security</li>
+                        <li>Digital Forensics</li>
+                        <li>Malware Analysis and Penetration Testing</li>
+                    </ul>
+                    The hands-on labs, case studies, and project-based approach will allow me to simulate real-world cyber incidents and build analytical thinking. It also prepares students for globally recognized certifications and careers in both public and private sectors, making it highly valuable for my future as a cybersecurity professional.
+                </div>
+            </details>
+
+            <!-- Question 13 -->
+            <details class="faq-item faq-question">
+                <summary>13. Course details: duration, fees, modules</summary>
+                <div class="faq-answer">
+                    Duration: 1 year (Sept 2025 to Sept 2026)<br>
+                    Fees: £18,100<br>
+                    Key Modules:
+                    <ul>
+                        <li>Cyber Threat Intelligence and Network Security: Teaches proactive threat detection, risk assessment, and network protection.</li>
+                        <li>Malware Analysis and Penetration Testing: Develops skills in ethical hacking, analyzing malicious code, and identifying system vulnerabilities.</li>
+                    </ul>
+                    The program also includes a final dissertation that involves solving a real-world cybersecurity problem or conducting advanced research.
+                </div>
+            </details>
+
+            <!-- Question 14 -->
+            <details class="faq-item faq-question">
+                <summary>14. How are you funding your studies?</summary>
+                <div class="faq-answer">
+                    I have secured a collateral-based education loan of ₹38 lakhs from HDFC CREDILA, backed by a property valued at ₹50 lakhs. My mother is the co-signer and also holds ₹10 lakhs in savings, giving us a total available fund of ₹48 lakhs. This amount is sufficient to cover tuition fees, living expenses, and any additional emergencies that may arise during my stay in the UK.
+                </div>
+            </details>
+
+            <!-- Question 15 -->
+            <details class="faq-item faq-question">
+                <summary>15. Total cost of study per year including living expenses</summary>
+                <div class="faq-answer">
+                    Tuition Fee: £18,100<br>
+                    Living Expenses (as per UKVI guideline of £1,023/month for 9 months): £9,207<br>
+                    Total Estimated Cost: £27,307<br><br>
+                    I will pay 50% of my tuition fee before receiving my CAS letter, as per DMU’s requirements.
+                </div>
+            </details>
+
+            <!-- Question 16 -->
+            <details class="faq-item faq-question">
+                <summary>16. Future Plans</summary>
+                <div class="faq-answer">
+                    After completing my MSc in Cyber Security:
+                    <p>Short-term: I plan to return to India and work as a Security Analyst or Security Engineer at companies like Infosys, TCS, IBM, or Wipro. These roles involve tasks such as risk analysis, penetration testing, firewall configuration, and compliance management. The expected starting salary in India is ₹10–12 lakhs per annum.</p>
+                    <p>Long-term: I aim to establish my own cybersecurity consultancy firm that offers services like:</p>
+                    <ul>
+                        <li>Vulnerability assessments</li>
+                        <li>Penetration testing</li>
+                        <li>Security training for small businesses</li>
+                        <li>Digital forensics and incident response</li>
+                    </ul>
+                    This will help bridge the gap in security readiness in smaller enterprises and contribute to safer digital infrastructure in India.
+                </div>
+            </details>
+
+            <!-- Question 17 -->
+            <details class="faq-item faq-question">
+                <summary>17. Do you plan to work part-time during your studies?</summary>
+                <div class="faq-answer">
+                    Yes, I plan to work part-time for up to 20 hours per week during term time and full-time during holidays, as permitted under UK student visa rules. This will help me gain hands-on experience, improve communication and teamwork skills, and manage some of my personal expenses. However, academics will remain my top priority.
+                </div>
+            </details>
+
+            <!-- Question 18 -->
+            <details class="faq-item faq-question">
+                <summary>18. Why was your USA visa rejected?</summary>
+                <div class="faq-answer">
+                    My previous US student visa application was refused under Section 214(b), as the visa officer believed I had not demonstrated strong ties to return to India. At that time, my financial documentation and career clarity were lacking. Since then, I have strengthened my financial position with a secured education loan and developed a clearer, goal-oriented academic and career plan. The UK now aligns better with my objectives in terms of curriculum, duration, and post-study opportunities.
+                </div>
+            </details>
+        </div>
+    </div>
+</body>
+</html>
